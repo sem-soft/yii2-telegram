@@ -23,3 +23,48 @@ In configuration file do
 ...
  ?>
  ```
+ ## Set webhook
+ For this action try code, for exaple in console controller:
+ ```php
+<?php
+/**
+ * Файл класса-контроллера TelegramController
+ * 
+ * @copyright Copyright (c) 2017, Oleg Chulakov Studio
+ * @link http://chulakov.com/
+ */
+
+namespace console\controllers;
+
+use Yii;
+
+/**
+ * Реализует настройку Telegram-бота
+ */
+class TelegramController extends \yii\console\Controller
+{
+    /**
+     * Устанавливает Webhook, по которому будет стучаться бот
+     */
+    public function actionSet()
+    {
+        if (Yii::$app->telegram->setWebhook()) {
+            $bot = Yii::$app->telegram->botName;
+            echo "Webhook привязан к боту '{$bot}'\n";    
+        }
+    }
+    
+    /**
+     * Удаляет Webhook, установленный ранее
+     */
+    public function actionUnset()
+    {
+        if (Yii::$app->telegram->unsetWebhook()) {
+            $bot = Yii::$app->telegram->botName;
+            echo "Webhook отвязан от бота '{$bot}'\n";
+        }
+    }
+}
+
+
+ ```
