@@ -1,0 +1,22 @@
+{
+    "name": "sem-soft/yii2-telegram",
+    "description": "Yii2 telegramm bot API wraper based on Longman Telegram Bot",
+    "license": "BSD 3-Clause",
+    "type": "yii2-components",
+    "require": {
+        "php": ">=5.4.0",
+        "sem-soft/yii2-helpers": "*",
+        "longman/telegram-bot": "<1.0.0"
+    },
+    "authors": [
+        {
+            "name": "Samsonov Vladimir",
+            "email": "samsonov.sem@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "sem\\telegram\\": ""
+        }
+    }
+}
